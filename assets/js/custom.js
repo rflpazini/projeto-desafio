@@ -32,6 +32,10 @@ $(document).ready(function() {
     $("#download").click(function(event) {
         var down = $("#select-download").val();
         location = "config/actions.php?action=export&html=" + $('.table-responsive').html() + "&tipo=" + down;
+        if (down == 'pdf') {
+        	window.print();
+        	location = 'index.php';
+        };
     })
 });
 

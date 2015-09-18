@@ -11,9 +11,6 @@ switch ($_REQUEST['action']) {
 		case 'excel':
 			exportExcel($_GET['html']);
 			break;
-		case 'pdf':
-			exportPdf($_GET['html']);
-			break;
 		default:
 			break;
 	}
