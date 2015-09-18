@@ -6,7 +6,7 @@ h1,
 h2,
 h3 {
     margin: 15px 0;
-    font-family: "Roboto-Slab", serif;
+    font-family: 'Roboto Slab', serif;
 }
 
 
@@ -49,6 +49,7 @@ h3 {
 .title-header {
     height: 250px;
     position: relative;
+    margin-bottom: 25px;
 }
 
 .title-header {
@@ -87,7 +88,68 @@ h3 {
     border-bottom: 0 !important;
 }
 
-#compare {
+#compare,
+#create-pdf {
     right: 35px !important;
     font-size: 0.9em;
+}
+
+.hide,
+.result {
+    display: none;
+}
+
+.on {
+    display: block;
+}
+
+.result .card {
+    width: 100% !important;
+}
+
+.result button {
+    margin: 15px auto;
+}
+
+ul.thumbnails.image_picker_selector {
+    overflow: auto;
+    list-style-image: none;
+    list-style-position: outside;
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+ul.thumbnails.image_picker_selector ul {
+    overflow: auto;
+    list-style-image: none;
+    list-style-position: outside;
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+ul.thumbnails.image_picker_selector li.group_title {
+    float: none;
+}
+
+ul.thumbnails.image_picker_selector li {
+    /*margin: 0px 12px 12px 0px;*/
+    float: left;
+}
+
+ul.thumbnails.image_picker_selector li .thumbnail {
+    padding: 6px;
+    border: 1px solid #dddddd;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+ul.thumbnails.image_picker_selector li .thumbnail img {
+    -webkit-user-drag: none;
+}
+
+ul.thumbnails.image_picker_selector li .thumbnail.selected {
+    background: #0088cc;
 }

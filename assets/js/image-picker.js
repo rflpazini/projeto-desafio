@@ -273,7 +273,7 @@
 
     ImagePickerOption.prototype.create_node = function() {
       var image, thumbnail;
-      this.node = jQuery("<li/>");
+      this.node = jQuery("<li class='col-md-4'/>");
       image = jQuery("<img class='image_picker_image'/>");
       image.attr("src", this.option.data("img-src"));
       thumbnail = jQuery("<div class='thumbnail'>");
