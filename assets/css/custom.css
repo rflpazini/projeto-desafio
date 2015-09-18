@@ -6,6 +6,7 @@ h1,
 h2,
 h3 {
     margin: 15px 0;
+    font-family: "Roboto-Slab", serif;
 }
 
 
@@ -61,7 +62,7 @@ h3 {
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
     position: relative;
     width: calc(100% - 25px);
-    height: calc(100% - 25px);
+    /*height: calc(100% - 25px);*/
     /*top: -65px;*/
     left: 5px;
     padding: 10px 15px;

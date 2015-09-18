@@ -1,6 +1,12 @@
 $(document).ready(function() {
 	viewPortConfig();
 	window.addEventListener("resize", viewPortConfig);
+
+	$("#compare").click(function() {
+		$.ajax ({
+
+		});
+	});
 });
 
 

@@ -1,27 +1,6 @@
 <?php
 include 'config/connect.php';
-
-function consulta() {
-    $sql = "SELECT * FROM carro";
-    $query = mysql_query($sql);
-    while ($sql = mysql_fetch_array($query)) {
-	$id = $sql["Id"];
-	$model = $sql["Modelo"];
-    $image = $sql["Url"];
-        
-	echo '<div class="col-sm-6 col-md-4">
-	           <div class="thumbnail" value="'. $id .'">
-	               <a href="#" target="_blank">
-	                   <img src="holder.js/400x200" alt="...">
-	                      <div class="caption">
-	                          <h3>'. $model .'</h3>
-	                          <p>...</p>
-	                      </div>
-	               </a>
-                </div>
-	       </div>';
-    }
-}
+include 'config/functions.php';
 ?>
 
 <html lang="pt-Br">
@@ -35,6 +14,7 @@ function consulta() {
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/custom.css">
     <link rel="stylesheet" href="assets/css/material.css">
+    <link rel="stylesheet" href="assets/css/image-picker.css">
     <!-- Fonts -->
 </head>
 
@@ -47,7 +27,6 @@ function consulta() {
     <!-- nav -->
     <nav class="navbar navbar-default">
         <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                     <span class="sr-only">Toggle navigation</span>
@@ -82,18 +61,37 @@ function consulta() {
     <div class="container">
         <section id="cars" class="card">
         <div class="row">
-        <?php 
-            consulta();
-        ?>
+        
         </div>
+
+        <section>
+            <select multiple="multiple" class="image-picker show-html">
+            <?php 
+                consulta();
+            ?>
+            </select>
+        </section>
         </section>
     </div>
     <!-- JS -->
     <script src="assets/js/jquery-2.1.4.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/materialize.min.js"></script>
+    <script src="assets/js/image-picker.js"></script>
 	<script src="assets/js/custom.js"></script>
 
     <script src="assets/js/holder.min.js"></script>
+
+    <script>
+        $('select').imagepicker({
+            limit: 2,
+            show_label: true,
+            selected: function(option) {
+                var values = this.val();
+                console.log(values);
+            }
+        });
+        
+    </script>
 </body>
 </html>
