@@ -26,12 +26,12 @@ include 'config/functions.php';
     <button id="compare" class="btn-floating btn-large waves-effect waves-light red pull-right btn-action-header">
         <i class="medium mdi-content-report"></i>
     </button>
-    <button id="create-pdf" class="btn-floating btn-large waves-effect waves-light red pull-right btn-action-header hide">
+    <button id="export" data-toggle="modal" data-target="#myModal" class="btn-floating btn-large waves-effect waves-light red pull-right btn-action-header hide">
         <i class="medium mdi-action-language"></i>
     </button>
     <div class="container">
         <section id="cars" class="card">
-            <select multiple="multiple" class="image-picker show-html">
+            <select id="select-cars" multiple="multiple" class="image-picker show-html">
                 <?php 
                     consulta();
                 ?>
@@ -41,6 +41,26 @@ include 'config/functions.php';
             <div id="table"></div>
             <button id="again"class="btn btn-primary waves-effect waves-light pull-right">Outras comparações</button>
         </section>
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Exportar para qual formato?</h4>
+              </div>
+              <div class="modal-body">
+                <select id="select-download" class="form-control">
+                  <option value="pdf">PDF</option>
+                  <option value="excel">Excel</option>
+                </select>
+              </div>
+              <div class="modal-footer">
+                <button id="download" type="submit" class="btn btn-primary">Save changes</button>
+              </div>
+            </div>
+          </div>
+        </div>
         
     </div>
 
@@ -54,7 +74,7 @@ include 'config/functions.php';
     <script src="assets/js/holder.min.js"></script>
 
     <script>
-        $('select').imagepicker({
+        $('#select-cars').imagepicker({
             limit: 2,
             show_label: true,
             selected: function(option) {

@@ -3,7 +3,7 @@ $(document).ready(function() {
     window.addEventListener("resize", viewPortConfig);
 
     $("#compare").click(function(event) {
-        if ($('select').val() == null || $('select').val().length < 2) {
+        if ($('#select-cars').val() == null || $('#select-cars').val().length < 2) {
             alert("Selecione dois(2) veículos para fazer a comparação! ");
             return;
         }
@@ -12,26 +12,27 @@ $(document).ready(function() {
                 method: "POST",
                 url: "config/actions.php",
                 data: {
-                    action: 'add',
-                    modelos: $('select').val()
+                    action: 'compara',
+                    modelos: $('#select-cars').val()
                 }
             })
             .done(function(msg) {
                 $('#cars').addClass('hide');
                 $('.result').addClass('on');
                 $('#compare').addClass('hide');
-                $('#create-pdf').removeClass('hide').addClass('on');
+                $('#export').removeClass('hide').addClass('on');
                 $('#table').html(msg);
-            });
+            })
     });
 
     $("#again").click(function(event) {
         location.reload();
     });
 
-    $('#create-pdf').click(function(e){
-    	window.print();
-    });
+    $("#download").click(function(event) {
+        var down = $("#select-download").val();
+        location = "config/actions.php?action=export&html=" + $('.table-responsive').html() + "&tipo=" + down;
+    })
 });
 
 

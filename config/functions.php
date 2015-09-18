@@ -111,4 +111,13 @@ function compara($id1, $id2) {
           </div>';
 }
 
+function exportExcel($htm) {
+    header("Content-type: application/vnd.ms-excel; charset=utf-8");
+    header("Content-type: application/x-msexcel; charset=utf-8");
+    header("Content-type: application/force-download");
+    header("Content-Disposition: attachment; filename=compara.xls");
+    header("Pragma: no-cache");
+
+    echo $htm;
+}
 ?>

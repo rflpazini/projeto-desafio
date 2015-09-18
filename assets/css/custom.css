@@ -87,7 +87,7 @@ h3 {
 }
 
 #compare,
-#create-pdf {
+#export {
     right: 35px !important;
     font-size: 0.9em;
 }
