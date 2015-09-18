@@ -63,8 +63,6 @@ h3 {
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
     position: relative;
     width: calc(100% - 25px);
-    /*height: calc(100% - 25px);*/
-    /*top: -65px;*/
     left: 5px;
     padding: 10px 15px;
 }
@@ -134,7 +132,6 @@ ul.thumbnails.image_picker_selector li.group_title {
 }
 
 ul.thumbnails.image_picker_selector li {
-    /*margin: 0px 12px 12px 0px;*/
     float: left;
 }
 
